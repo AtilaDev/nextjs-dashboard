@@ -15,6 +15,8 @@ const getPokemons = async (
     name: pokemon.name,
   }));
 
+  // throw new Error('Algo malió sal')
+
   return pokemons;
 };
 
