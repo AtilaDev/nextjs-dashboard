@@ -1,4 +1,4 @@
-import { SimplePokemon } from '@/app/dashboard/pokemons/interfaces';
+import { SimplePokemon } from '@/app/dashboard/pokemons';
 import { PokemonsResponse } from '@/app/dashboard/pokemons/interfaces/pokemons-response';
 import { PokemonGrid } from '@/pokemons';
 

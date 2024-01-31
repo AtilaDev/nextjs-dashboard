@@ -1,4 +1,4 @@
-import { SimplePokemon } from '@/app/dashboard/pokemons/interfaces';
+import { SimplePokemon } from '@/app/dashboard/pokemons';
 import { PokemonCard } from '.';
 
 interface Props {
