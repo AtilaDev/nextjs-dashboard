@@ -5,21 +5,23 @@ import { Pokemon } from '../../pokemons';
 
 interface Props {
   params: {
-    id: string;
+    name: string;
   };
 }
 
 //! Esto solo se va a ejecutar en build time
 export async function generateStaticParams() {
-  const static151Pokemons = Array.from({ length: 151 }, (_, i) => i);
+  const get151Pokemons = await fetch(
+    'https://pokeapi.co/api/v2/pokemon?limit=151'
+  ).then((res) => res.json());
 
-  return static151Pokemons.map((id) => ({
-    id: id.toString(),
+  return get151Pokemons.results.map((pokemon: Pokemon) => ({
+    name: pokemon.name,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id, name } = await getPokemon(params.id);
+  const { id, name } = await getPokemon(params.name);
 
   return {
     title: `#${id} - ${name}`,
@@ -45,7 +47,7 @@ const getPokemon = async (name: string): Promise<Pokemon> => {
 };
 
 export default async function PokemonPage({ params }: Props) {
-  const pokemon = await getPokemon(params.id);
+  const pokemon = await getPokemon(params.name);
 
   return (
     <div className='flex mt-5 flex-col items-center text-slate-800'>
