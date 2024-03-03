@@ -5,7 +5,10 @@ import {
   IoHeartOutline,
   IoLogoReact,
 } from 'react-icons/io5';
-import { SidebarMenuItem, SidebarMenuItemProps } from './SidebarMenuItem';
+import {
+  SidebarMenuItem,
+  SidebarMenuItemProps,
+} from '../sidebar/SidebarMenuItem';
 import { MdOutlineCatchingPokemon } from 'react-icons/md';
 
 const menuItems: SidebarMenuItemProps[] = [
